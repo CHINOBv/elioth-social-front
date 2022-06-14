@@ -18,6 +18,10 @@ export default function Share() {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+    if(!desc.current.value.trim()){
+      alert('No puedes hacer esto');
+      return;
+    }
     const newPost = {
       userId: user._id,
       desc: desc.current.value,
